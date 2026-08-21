@@ -15,6 +15,18 @@ Coursework notebooks, one folder per lab. Each folder holds the notebook, the ex
 | [lab-10](lab-10/) | [lab-10.ipynb](lab-10/lab-10.ipynb) | XOR with an MLP built three ways: Keras, PyTorch, and low-level TensorFlow |
 | [cia-1](cia-1/) | [cia-1.ipynb](cia-1/cia-1.ipynb) | CIA 1 submission |
 | [dist-met](dist-met/) | [activity-2.ipynb](dist-met/activity-2.ipynb) | Data cleaning, complete case analysis, skew-based imputation, distance matrices |
+| [ete](ete/) | [ete-1.ipynb](ete/ete-1.ipynb), [ete-2.ipynb](ete/ete-2.ipynb) | End Trimester Exam submission — see below |
+
+## End Trimester Exam
+
+The [ete](ete/) folder holds the two notebooks submitted for the End Trimester Exam, each with its exported PDF. Both work on the Iris dataset and follow the same skeleton: profile the raw data, check missing values, split before scaling, then build two variants of a model and compare them on cross-validated and held-out scores.
+
+| Notebook | PDF | What it covers |
+| --- | --- | --- |
+| [ete-1.ipynb](ete/ete-1.ipynb) | [ete-1.pdf](ete/ete-1.pdf) | KNN on the 4 original features against KNN on 2 LDA discriminants. Class-wise histograms, IQR outlier check, correlation heatmap, `k` chosen by 5-fold stratified CV, decision boundaries drawn in both spaces, and a metric-by-metric comparison |
+| [ete-2.ipynb](ete/ete-2.ipynb) | [ete-2.pdf](ete/ete-2.pdf) | An MLP at two capacities — one hidden layer of 5 neurons against two layers of 32 and 16. Repeated stratified 5-fold CV, train-versus-validation gap as an overfitting signal, loss curves, and a 10-seed rerun showing 45 test rows cannot separate the two |
+
+Both notebooks keep the scaler (and LDA) inside a `Pipeline`, so every CV fold refits them on that fold's training part and no test statistics leak into the estimate.
 
 ## Working on this repo
 
